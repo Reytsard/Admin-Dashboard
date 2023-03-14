@@ -17,10 +17,7 @@ body{
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
     background-color: white;
-    color: rgb(236, 66, 66);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fit, 1fr);
+    color: rgb(236, 66, 66);grid-template-rows: repeat(auto-fit, 1fr);
 }
 .side-nav ul,
 .side-nav li{
@@ -30,11 +27,44 @@ body{
 .header{
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr .2fr .2fr;
+    grid-template-rows: .5fr 1fr;
+}
+.header .searchBar{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    margin: 0px 60px;
+    align-self: center;
+}
+.header .searchBar input{
+    width: 100%;
+}
+.header .create{
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 1;
+    width: 100%;
+    align-self: center;
 }
 .content{
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
     background-color: rgb(167, 167, 167);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+}
+.content .projects{
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+.content .announcements{
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+}
+.content .trending{
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
 }
 .footer{
     grid-column: 1 / span 3;
