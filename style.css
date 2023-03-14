@@ -18,7 +18,6 @@ body{
     grid-row: 1 / span 2;
     background-color: white;
     color: rgb(236, 66, 66);
-    /* font-style: ; */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fit, 1fr);
