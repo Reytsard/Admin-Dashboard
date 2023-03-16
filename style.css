@@ -15,6 +15,12 @@ body{
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 3fr .1fr;
 }
+.side-nav li img,
+.header .notifBell img{
+    height: 25px;
+    width: auto;
+}
+
 .side-nav{
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
@@ -26,7 +32,13 @@ body{
     grid-template-columns: 1fr;
     grid-template-rows: min(100px,100%) 1fr .5fr;
     justify-items: center;
+    overflow: auto;
 }
+.side-nav li{
+    display: flex;
+    align-items: center;
+}
+
 .side-nav ul,
 .side-nav li{
   list-style: none;
@@ -51,6 +63,7 @@ body{
     justify-content: space-evenly;
 }
 .header{
+    background-color: rgb(202, 202, 202);
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
     display: grid;
@@ -63,9 +76,16 @@ body{
     grid-row: 1 / span 1;
     margin: 0px 60px;
     align-self: center;
+    
 }
 .header .searchBar input{
     width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+.header .user-name{
+    font-size: 1rem;
+    font-family: 'Itim','Courier New', Courier, monospace;
 }
 .header .create{
     grid-column: 2 / span 3 ;
@@ -73,6 +93,16 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+.header .greeting img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.header .pfp img{
+    width: clamp(40px, 30px, 100%);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
 }
 .header .create button{
     background-color: white;
@@ -120,6 +150,7 @@ body{
     grid-row: 2 / span 3;
     width: 100%;
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 0;
     gap: 10px;
@@ -132,16 +163,31 @@ body{
     width: clamp(250px,200px,100px);
     height: clamp(200px, 150px, 100px);
 }
-.content .annc-hdr{
+.annc-hdr{
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
+}
+.annc-hdr, .trndng-hdr{
+    font-size: 1rem;
+    font-family: 'Itim','Courier New', Courier, monospace;
+    text-align: center;
 }
 .content .announcements{
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
+}
+.announcement,
+.trending{
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(51, 51, 51, 0.658);
+}
+.announcements, .trendings{
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: auto;
 }
 .trndng-hdr{
     grid-column: 2 / span 1;
@@ -150,7 +196,6 @@ body{
 .content .trendings{
     grid-column: 2 /span 1;
     grid-row: 4 / span 1;
-    overflow: auto;
 }
 .trending,
 .announcement{
